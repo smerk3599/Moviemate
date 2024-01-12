@@ -1,7 +1,18 @@
-export const MovieList = () => {
+import { useFetch } from "../hooks/useFetch";
+import { Card } from "../components";
+
+export const MovieList = ({ apiPath }) => {
+  const { data: movies } = useFetch(apiPath);
+
   return (
-    <div className=" text-center m-5">
-      <main>MovieList</main>
-    </div>
+    <main>
+      <section className="max-w-7xl mx-auto py-7">
+        <div className="flex justify-start flex-wrap other:justify-evenly">
+          {movies.map((movie) => (
+            <Card key={movie.id} movie={movie} />
+          ))}
+        </div>
+      </section>
+    </main>
   );
 };
