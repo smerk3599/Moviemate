@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import NoPage from "../assets/images/pagenotfound.png";
 
 export const PageNotFound = () => {
+  useEffect(() => {
+    document.title = `Page Not Found / MovieMate`;
+  });
   return (
     <main>
       <section className="flex flex-col justify-center px-2">
