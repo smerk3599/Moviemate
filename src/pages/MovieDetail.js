@@ -17,11 +17,11 @@ export const MovieDetail = () => {
       );
       const json = await response.json();
       setmovie(json);
-      console.log(json);
     }
     fetchMovie();
   }, [params.id]);
 
+  //eslint-disable-next-line
   const pageTitle = useTitle(movie.title);
 
   return (

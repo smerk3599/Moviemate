@@ -9,6 +9,7 @@ export const Search = ({ apiPath }) => {
 
   const { data: movies } = useFetch(apiPath, queryTerm);
 
+  //eslint-disable-next-line
   const pageTitle = useTitle(`Search Result for ${queryTerm}`);
 
   return (
